@@ -1,32 +1,46 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-  <meta charset="UTF-8">
-  <title>Informační portál pro cizince</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Integrační portál</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
 </head>
-<body class="bg-white text-gray-900">
-  <header class="bg-blue-700 text-white p-4 flex justify-between items-center">
-    <div class="flex items-center space-x-4">
-      <img src="https://flagcdn.com/cz.svg" alt="CZ Flag" class="w-8 h-6">
-      <h1 class="text-xl font-bold">Informační portál pro cizince</h1>
-    </div>
-    <nav class="space-x-4">
-      <a href="#about" class="hover:underline">O nás</a>
-      <a href="#news" class="hover:underline">Aktuality</a>
-      <a href="#contacts" class="hover:underline">Kontakty</a>
-    </nav>
+<body class="bg-gray-100 text-gray-900">
+  <header class="bg-white shadow p-4 flex justify-between items-center">
+    <div class="text-xl font-bold">Integrační portál</div>
+    <img src="https://flagcdn.com/w320/cz.png" alt="CZ Flag" class="h-6">
   </header>
 
-  <main class="max-w-4xl mx-auto p-6 space-y-8">
-    <section class="text-center">
-      <h2 class="text-2xl font-semibold">Vítejte!</h2>
-      <p>Oficiální informace pro cizince v České republice.</p>
-      <a href="form.html" class="mt-4 inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Ověřit údaje</a>
+  <nav class="bg-blue-600 text-white p-3 flex space-x-4">
+    <a href="#" class="hover:underline">O nás</a>
+    <a href="#" class="hover:underline">Aktuality</a>
+    <a href="#" class="hover:underline">Kontakty</a>
+    <a href="form.html" class="bg-white text-blue-600 px-3 py-1 rounded ml-auto font-bold">Ověřit údaje</a>
+  </nav>
+
+  <main class="max-w-4xl mx-auto p-6">
+    <section class="mb-6">
+      <h2 class="text-2xl font-semibold mb-2">Aktuality</h2>
+      <ul class="space-y-2">
+        <li><a href="#" class="text-blue-600 hover:underline">Nové změny v pobytových povoleních 2025</a></li>
+        <li><a href="#" class="text-blue-600 hover:underline">Informace pro ukrajinské občany v ČR</a></li>
+        <li><a href="#" class="text-blue-600 hover:underline">Nový integrační program pro migranty</a></li>
+      </ul>
     </section>
 
-    <section id="news">
-      <h3 class="text-xl font-bold mb-2">Aktuality</h3>
-      <ul class="list
+    <section class="mb-6">
+      <h2 class="text-2xl font-semibold mb-2">Podpora Ukrajině</h2>
+      <p>Speciální sekce s informacemi a podporou pro osoby prchající před válkou na Ukrajině. <a href="#" class="text-blue-600 hover:underline">Zobrazit více</a></p>
+    </section>
 
-
+    <section>
+      <h2 class="text-2xl font-semibold mb-2">Kontakty</h2>
+      <p>Ministerstvo vnitra ČR<br>
+      Nad Štolou 3, 170 34 Praha 7<br>
+      Email: info@mvcr.cz<br>
+      Telefon: +420 974 832 421</p>
+    </section>
+  </main>
+</body>
+</html>

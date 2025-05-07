@@ -1,63 +1,34 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Informační portál pro cizince</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body class="bg-gray-100 text-gray-900">
-  <header class="bg-blue-900 text-white py-4">
-    <div class="max-w-7xl mx-auto px-4 flex justify-between items-center">
-      <h1 class="text-2xl font-bold flex items-center">
-        <img src="https://flagcdn.com/cz.svg" alt="CZ" class="h-6 w-10 mr-2"> Informační portál pro cizince
-      </h1>
-      <nav>
-        <ul class="flex space-x-4">
-          <li><a href="login.html" class="hover:underline">Přihlásit se</a></li>
-        </ul>
-      </nav>
-    </div>
+<body>
+  <header class="p-4 bg-blue-500 text-white text-center">
+    <img src="cz_flag.png" alt="Česká vlajka" class="inline-block w-8 h-8 mr-4">
+    <h1 class="inline-block">Informační portál pro cizince</h1>
   </header>
 
-  <main class="max-w-7xl mx-auto mt-10 px-4">
-    <section class="mb-10">
-      <h2 class="text-xl font-semibold mb-4">Novinky</h2>
-      <ul class="space-y-2">
-        <li>
-          <a href="#" class="text-blue-700 hover:underline">Bezplatný přístup na český trh práce pro občany Tchaj-wanu</a>
-          <p class="text-sm text-gray-600">3. 3. 2025</p>
-        </li>
-        <li>
-          <a href="#" class="text-blue-700 hover:underline">Mazání duplicitních uživatelských účtů</a>
-          <p class="text-sm text-gray-600">27. 1. 2025</p>
-        </li>
+  <main class="p-6">
+    <!-- Новости -->
+    <section>
+      <h2 class="text-xl font-semibold">Novinky</h2>
+      <ul>
+        <li>Nový zákon o zaměstnávání cizinců v ČR.</li>
+        <li>Nové informace pro občany Ukrajiny.</li>
+        <li>Online registrace pro dlouhodobé víza.</li>
+        <!-- Расширенные новости -->
       </ul>
     </section>
 
-    <section class="mb-10">
-      <h2 class="text-xl font-semibold mb-4">Informace pro občany Ukrajiny</h2>
-      <ul class="list-disc list-inside space-y-2">
-        <li><a href="https://www.mpsv.cz/pomoc-ukrajine" class="text-blue-700 hover:underline" target="_blank">Pomoc občanům Ukrajiny – MPSV</a></li>
-        <li><a href="https://www.uradprace.cz/web/cz/pomoc-pro-obcany-ukrajiny-a-jejich-zamestnavatele" class="text-blue-700 hover:underline" target="_blank">Zaměstnání – Úřad práce ČR</a></li>
-        <li><a href="https://www.helpukraine.cz/" class="text-blue-700 hover:underline" target="_blank">HelpUkraine.cz</a></li>
-      </ul>
-    </section>
-
-    <section class="mb-10">
-      <h2 class="text-xl font-semibold mb-4">Kontakty</h2>
-      <ul class="list-none space-y-2">
-        <li><strong>Ministerstvo vnitra ČR</strong></li>
-        <li><a href="mailto:info@mvcr.cz" class="text-blue-700 hover:underline">info@mvcr.cz</a></li>
-        <li><a href="tel:+420234562234" class="text-blue-700 hover:underline">+420 234 562 234</a></li>
-        <li><strong>Adresa:</strong> Nad Štolou 3, 170 00 Praha 7</li>
-      </ul>
+    <!-- Кнопка для входа -->
+    <section class="mt-8">
+      <a href="login.html" class="inline-block bg-blue-500 text-white py-2 px-4 rounded">Přihlásit se</a>
     </section>
   </main>
-
-  <footer class="bg-gray-200 text-center py-4 mt-10">
-    <p class="text-sm text-gray-600">©2025 Ministerstvo vnitra ČR</p>
-  </footer>
 </body>
 </html>
 

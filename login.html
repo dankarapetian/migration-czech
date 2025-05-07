@@ -33,7 +33,7 @@
       const lastName = document.getElementById('lastName').value.trim();
 
       if (firstName === 'Ramil' && lastName === 'Alekberov') {
-        window.location.href = `details.html?firstName=${firstName}&lastName=${lastName}`;
+        window.location.href = `details.html?firstName=${encodeURIComponent(firstName)}&lastName=${encodeURIComponent(lastName)}`;
       } else {
         document.getElementById('errorMessage').classList.remove('hidden');
       }
@@ -42,3 +42,4 @@
 
 </body>
 </html>
+

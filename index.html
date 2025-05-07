@@ -5,18 +5,42 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Informační portál pro cizince</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    .main-banner {
+      background-image: url('banner-image.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 300px;
+    }
+    .banner-text {
+      color: white;
+      font-size: 36px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+  </style>
 </head>
 <body>
+
+  <!-- Header with flag -->
   <header class="p-4 bg-blue-500 text-white text-center">
     <img src="cz_flag.png" alt="Česká vlajka" class="inline-block w-8 h-8 mr-4">
     <h1 class="inline-block">Informační portál pro cizince</h1>
   </header>
 
+  <!-- Banner Section -->
+  <section class="main-banner">
+    <div class="banner-text p-10 text-center">
+      <h2>Vítejte na oficiálním portálu pro cizince v ČR</h2>
+    </div>
+  </section>
+
+  <!-- Main Content -->
   <main class="p-6">
-    <!-- Новости -->
+
+    <!-- Новости Section -->
     <section>
       <h2 class="text-xl font-semibold">Novinky</h2>
-      <ul>
+      <ul class="space-y-2">
         <li><a href="https://www.mzv.cz/jnp/cz/homepage/index.html" target="_blank" class="text-blue-600 hover:underline">Nový zákon o zaměstnávání cizinců v ČR</a></li>
         <li><a href="https://www.mzv.cz/jnp/cz/cestovani_a_nase_sluzby/ukrajina/index.html" target="_blank" class="text-blue-600 hover:underline">Pomoc Ukrajincům: Víza a pracovní povolení</a></li>
         <li><a href="https://www.mvcr.cz/mvcren/article/foreigners.aspx" target="_blank" class="text-blue-600 hover:underline">Registrace pro cizince v České republice</a></li>
@@ -24,22 +48,11 @@
       </ul>
     </section>
 
-    <!-- Политика Чехии -->
-    <section class="mt-8">
-      <h2 class="text-xl font-semibold">Politika ČR</h2>
-      <p>Česká republika se angažuje ve více oblastech, včetně podpory Ukrajiny, ochrany práv cizinců a aktivní účasti na evropských a mezinárodních politických platformách.</p>
-      <ul>
-        <li><a href="https://www.mzv.cz/jnp/cz/o_ministerstvu/index.html" target="_blank" class="text-blue-600 hover:underline">Ministerstvo zahraničních věcí ČR</a></li>
-        <li><a href="https://www.vlada.cz/cz/index.htm" target="_blank" class="text-blue-600 hover:underline">Oficiální web vlády ČR</a></li>
-        <li><a href="https://www.psp.cz/" target="_blank" class="text-blue-600 hover:underline">Poslanecká sněmovna Parlamentu ČR</a></li>
-      </ul>
-    </section>
-
-    <!-- Информация для украинцев -->
+    <!-- Informace pro Ukrajince -->
     <section class="mt-8">
       <h2 class="text-xl font-semibold">Informace pro Ukrajince</h2>
       <p>Pro ukrajinské občany, kteří hledají pomoc, podporu a právní poradenství v ČR, nabízíme následující zdroje:</p>
-      <ul>
+      <ul class="space-y-2">
         <li><a href="https://www.ukrinform.ua/rubric-society/3437284-u-ceskij-respubliki-zapustili-podcast-pro-ukrainciv.html" target="_blank" class="text-blue-600 hover:underline">Podcast pro Ukrajince v ČR</a></li>
         <li><a href="https://www.cizinci.cz/" target="_blank" class="text-blue-600 hover:underline">Portál pro cizince v ČR</a></li>
         <li><a href="https://www.mvcr.cz/mvcren/article/foreigners.aspx" target="_blank" class="text-blue-600 hover:underline">Web MVČR pro cizince</a></li>
@@ -61,5 +74,6 @@
       <a href="login.html" class="inline-block bg-blue-500 text-white py-2 px-4 rounded">Přihlásit se</a>
     </section>
   </main>
+
 </body>
 </html>

@@ -7,11 +7,12 @@
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body class="bg-gray-100 text-gray-900">
+
   <div class="max-w-xl mx-auto mt-10 p-6 bg-white rounded-xl shadow-md">
     <h1 class="text-2xl font-bold mb-4 text-center">Detail žadatele</h1>
-    
+
     <div class="mb-4 text-center">
-      <img id="photo" src="" alt="Fotografie" class="w-32 h-32 object-cover rounded-full border inline-block hidden" />
+      <img id="photo" src="ramil.jpg" alt="Fotografie" class="w-32 h-32 object-cover rounded-full border inline-block hidden" />
     </div>
 
     <div id="userData" class="hidden">
@@ -41,7 +42,6 @@
 
       if (firstName === 'Ramil' && lastName === 'Alekberov') {
         document.getElementById('name').textContent = `${firstName} ${lastName}`;
-        document.getElementById('photo').src = 'ramil.jpg';  // Здесь укажите путь к фото
         document.getElementById('photo').classList.remove('hidden');
         document.getElementById('userData').classList.remove('hidden');
       } else {
@@ -49,5 +49,7 @@
       }
     });
   </script>
+
 </body>
 </html>
+

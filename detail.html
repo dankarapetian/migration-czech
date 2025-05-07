@@ -6,36 +6,48 @@
   <title>Detail žadatele</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body>
-  <main class="max-w-xl mx-auto mt-10 p-6 bg-white rounded-xl shadow-md">
+<body class="bg-gray-100 text-gray-900">
+  <div class="max-w-xl mx-auto mt-10 p-6 bg-white rounded-xl shadow-md">
     <h1 class="text-2xl font-bold mb-4 text-center">Detail žadatele</h1>
     
-    <p><strong>Jméno:</strong> <span id="firstName"></span></p>
-    <p><strong>Příjmení:</strong> <span id="lastName"></span></p>
-    <p><strong>Datum narození:</strong> 20.09.1998</p>
-    <p><strong>Místo narození:</strong> Moskva, Rusko</p>
-    <p><strong>Pohlaví:</strong> Muž</p>
-    <p><strong>Státní příslušnost:</strong> Česká republika</p>
-    <p><strong>Datum vydání:</strong> 27.03.2025</p>
-    <p><strong>Datum expirace:</strong> 27.03.2035</p>
-    <p><strong>Číslo pasu:</strong> 283359730</p>
-  </main>
+    <div class="mb-4 text-center">
+      <img id="photo" src="" alt="Fotografie" class="w-32 h-32 object-cover rounded-full border inline-block hidden" />
+    </div>
+
+    <div id="userData" class="hidden">
+      <ul class="space-y-1">
+        <li><strong>Jméno:</strong> <span id="name"></span></li>
+        <li><strong>Datum narození:</strong> 20.09.1998</li>
+        <li><strong>Místo narození:</strong> Moskva, Rusko</li>
+        <li><strong>Státní příslušnost:</strong> Česká republika</li>
+        <li><strong>Číslo pasu:</strong> 283359730</li>
+        <li><strong>Datum vydání:</strong> 27.03.2025</li>
+        <li><strong>Datum expirace:</strong> 27.03.2035</li>
+      </ul>
+    </div>
+
+    <p id="errorMessage" class="text-red-600 text-sm hidden text-center">Neplatné údaje. Přístup odepřen.</p>
+  </div>
 
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const urlParams = new URLSearchParams(window.location.search);
-      const firstName = urlParams.get('firstName');
-      const lastName = urlParams.get('lastName');
+    function getQueryParam(param) {
+      const params = new URLSearchParams(window.location.search);
+      return params.get(param);
+    }
 
-      if (firstName === "Ramil" && lastName === "ALEKBEROV") {
-        document.getElementById('firstName').textContent = firstName;
-        document.getElementById('lastName').textContent = lastName;
+    document.addEventListener('DOMContentLoaded', function () {
+      const firstName = getQueryParam('firstName');
+      const lastName = getQueryParam('lastName');
+
+      if (firstName === 'Ramil' && lastName === 'Alekberov') {
+        document.getElementById('name').textContent = `${firstName} ${lastName}`;
+        document.getElementById('photo').src = 'ramil.jpg';  // Здесь укажите путь к фото
+        document.getElementById('photo').classList.remove('hidden');
+        document.getElementById('userData').classList.remove('hidden');
       } else {
-        alert('Nepřesné údaje. Zkuste to znovu.');
-        window.location.href = 'login.html';
+        document.getElementById('errorMessage').classList.remove('hidden');
       }
     });
   </script>
 </body>
 </html>
-

@@ -2,81 +2,31 @@
 <html lang="cs">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Informační portál pro cizince</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <style>
-    .main-banner {
-      background-image: url('banner-image.jpg');
-      background-size: cover;
-      background-position: center;
-      height: 300px;
-    }
-    .banner-text {
-      color: white;
-      font-size: 36px;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    }
-  </style>
 </head>
-<body>
-
-  <!-- Header with flag -->
-  <header class="p-4 bg-blue-500 text-white text-center">
-    <img src="cz_flag.png" alt="Česká vlajka" class="inline-block w-8 h-8 mr-4">
-    <h1 class="inline-block">Informační portál pro cizince</h1>
+<body class="bg-white text-gray-900">
+  <header class="bg-blue-700 text-white p-4 flex justify-between items-center">
+    <div class="flex items-center space-x-4">
+      <img src="https://flagcdn.com/cz.svg" alt="CZ Flag" class="w-8 h-6">
+      <h1 class="text-xl font-bold">Informační portál pro cizince</h1>
+    </div>
+    <nav class="space-x-4">
+      <a href="#about" class="hover:underline">O nás</a>
+      <a href="#news" class="hover:underline">Aktuality</a>
+      <a href="#contacts" class="hover:underline">Kontakty</a>
+    </nav>
   </header>
 
-  <!-- Banner Section -->
-  <section class="main-banner">
-    <div class="banner-text p-10 text-center">
-      <h2>Vítejte na oficiálním portálu pro cizince v ČR</h2>
-    </div>
-  </section>
-
-  <!-- Button to check data -->
-  <section class="p-6 text-center">
-    <a href="login.html" class="inline-block bg-blue-500 text-white py-2 px-4 rounded">Přihlásit se</a>
-  </section>
-
-  <!-- Main Content -->
-  <main class="p-6">
-
-    <!-- Новости Section -->
-    <section>
-      <h2 class="text-xl font-semibold">Novinky</h2>
-      <ul class="space-y-2">
-        <li><a href="https://www.mzv.cz/jnp/cz/homepage/index.html" target="_blank" class="text-blue-600 hover:underline">Nový zákon o zaměstnávání cizinců v ČR</a></li>
-        <li><a href="https://www.mzv.cz/jnp/cz/cestovani_a_nase_sluzby/ukrajina/index.html" target="_blank" class="text-blue-600 hover:underline">Pomoc Ukrajincům: Víza a pracovní povolení</a></li>
-        <li><a href="https://www.mvcr.cz/mvcren/article/foreigners.aspx" target="_blank" class="text-blue-600 hover:underline">Registrace pro cizince v České republice</a></li>
-        <li><a href="https://www.mzv.cz/jnp/cz/cestovani_a_nase_sluzby/viza_a_konzularni_vztahy/obcanek_ukrajiny.html" target="_blank" class="text-blue-600 hover:underline">Ukrajinští občané: Konsulární a vízové služby</a></li>
-      </ul>
+  <main class="max-w-4xl mx-auto p-6 space-y-8">
+    <section class="text-center">
+      <h2 class="text-2xl font-semibold">Vítejte!</h2>
+      <p>Oficiální informace pro cizince v České republice.</p>
+      <a href="form.html" class="mt-4 inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Ověřit údaje</a>
     </section>
 
-    <!-- Informace pro Ukrajince -->
-    <section class="mt-8">
-      <h2 class="text-xl font-semibold">Informace pro Ukrajince</h2>
-      <p>Pro ukrajinské občany, kteří hledají pomoc, podporu a právní poradenství v ČR, nabízíme následující zdroje:</p>
-      <ul class="space-y-2">
-        <li><a href="https://www.ukrinform.ua/rubric-society/3437284-u-ceskij-respubliki-zapustili-podcast-pro-ukrainciv.html" target="_blank" class="text-blue-600 hover:underline">Podcast pro Ukrajince v ČR</a></li>
-        <li><a href="https://www.cizinci.cz/" target="_blank" class="text-blue-600 hover:underline">Portál pro cizince v ČR</a></li>
-        <li><a href="https://www.mvcr.cz/mvcren/article/foreigners.aspx" target="_blank" class="text-blue-600 hover:underline">Web MVČR pro cizince</a></li>
-        <li><a href="https://www.ukrainska.org/" target="_blank" class="text-blue-600 hover:underline">Ukrajinský spolek v ČR</a></li>
-      </ul>
-    </section>
-
-    <!-- Контакты -->
-    <section class="mt-8">
-      <h2 class="text-xl font-semibold">Kontakty</h2>
-      <p><strong>Ministerstvo vnitra ČR</strong></p>
-      <p>Adresa: Nad Štolou 3, 170 00 Praha 7</p>
-      <p>Telefon: +420 974 811 111</p>
-      <p>Email: <a href="mailto:posta@mvcr.cz" class="text-blue-600 hover:underline">posta@mvcr.cz</a></p>
-    </section>
-
-  </main>
-
-</body>
-</html>
+    <section id="news">
+      <h3 class="text-xl font-bold mb-2">Aktuality</h3>
+      <ul class="list
 
 

@@ -1,0 +1,46 @@
+detail_html = """<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detail žadatele</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 text-gray-900">
+  <div class="max-w-xl mx-auto mt-10 p-6 bg-white rounded-xl shadow-md">
+    <h1 class="text-2xl font-bold mb-4 text-center">Detail žadatele</h1>
+    <p class="text-lg mb-4">Jméno žadatele: <span id="applicantName" class="font-semibold"></span></p>
+
+    <ul class="space-y-1">
+      <li><strong>Státní příslušnost:</strong> Ruská federace</li>
+      <li><strong>Číslo pasu:</strong> <span id="passportNumber"></span></li>
+      <li><strong>Stav žádosti:</strong> V přezkumu</li>
+      <li><strong>Typ víza:</strong> D/VC – Dlouhodobé</li>
+      <li><strong>Datum podání:</strong> 12.03.2025</li>
+      <li><strong>Očekávané rozhodnutí:</strong> 15.06.2025</li>
+    </ul>
+  </div>
+
+  <script>
+    function getQueryParam(param) {
+      const params = new URLSearchParams(window.location.search);
+      return params.get(param);
+    }
+
+    function generatePassportNumber() {
+      const series = Math.floor(Math.random() * 90 + 10);
+      const number = Math.floor(Math.random() * 900000 + 100000);
+      return `${series}${number}`;
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const name = getQueryParam('name');
+      if (name) {
+        document.getElementById('applicantName').textContent = decodeURIComponent(name);
+        document.getElementById('passportNumber').textContent = generatePassportNumber();
+      }
+    });
+  </script>
+</body>
+</html>
+"""

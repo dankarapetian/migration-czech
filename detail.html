@@ -7,27 +7,59 @@
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body class="bg-gray-100 text-gray-900">
-  <div class="max-w-xl mx-auto mt-10 p-6 bg-white rounded-xl shadow-md">
+  <div class="max-w-xl mx-auto mt-10 p-6 bg-white rounded shadow">
     <h1 class="text-2xl font-bold mb-4 text-center">Detail žadatele</h1>
+    <p class="text-lg mb-4">Jméno: <span id="applicantName" class="font-semibold"></span></p>
 
-    <div class="mb-4 text-center">
-      <img src="ramil.jpg" alt="Fotografie" class="w-32 h-32 object-cover rounded-full border inline-block" />
+    <div class="text-center mb-4">
+      <img id="photo" src="" alt="Fotografie" class="w-32 h-32 rounded-full border hidden mx-auto">
     </div>
 
-    <ul class="space-y-1 text-sm">
-      <li><strong>Jméno:</strong> Ramil</li>
-      <li><strong>Příjmení:</strong> Alekberov</li>
-      <li><strong>Datum narození:</strong> 20.09.1998</li>
-      <li><strong>Místo narození:</strong> Moskva, Rusko</li>
-      <li><strong>Pohlaví:</strong> Muž</li>
-      <li><strong>Státní občanství:</strong> Česká republika</li>
-      <li><strong>Datum vydání:</strong> 27.03.2025</li>
-      <li><strong>Platnost do:</strong> 27.03.2035</li>
-      <li><strong>Typ víza:</strong> D/VC – Dlouhodobé</li>
-      <li><strong>Stav žádosti:</strong> V přezkumu</li>
-      <li><strong>Číslo pasu:</strong> 70******</li>
-    </ul>
+    <div id="userData" class="hidden">
+      <ul class="space-y-1">
+        <li><strong>Státní příslušnost:</strong> Česká republika</li>
+        <li><strong>Datum narození:</strong> 20.09.1998</li>
+        <li><strong>Místo narození:</strong> Moskva, Rusko</li>
+        <li><strong>Pohlaví:</strong> Muž</li>
+        <li><strong>Číslo pasu:</strong> <span id="passportNumber"></span></li>
+        <li><strong>Datum vydání:</strong> 27.03.2025</li>
+        <li><strong>Platnost do:</strong> 27.03.2035</li>
+        <li><strong>Typ víza:</strong> D/VC – Dlouhodobé</li>
+        <li><strong>Stav žádosti:</strong> V přezkumu</li>
+      </ul>
+    </div>
+
+    <p id="errorMessage" class="text-red-600 text-sm hidden text-center">Neplatné údaje. Přístup odepřen.</p>
   </div>
+
+  <script>
+    function getQueryParam(param) {
+      const params = new URLSearchParams(window.location.search);
+      return params.get(param);
+    }
+
+    function generatePassportNumber() {
+      const series = Math.floor(Math.random() * 90 + 10);
+      const number = Math.floor(Math.random() * 900000 + 100000);
+      return `${series}${number}`;
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const name = getQueryParam('name');
+      const photo = getQueryParam('photo');
+
+      if (name === 'Alekberov Ramil' && photo === 'ramil.jpg') {
+        document.getElementById('applicantName').textContent = name;
+        document.getElementById('passportNumber').textContent = generatePassportNumber();
+        const imgEl = document.getElementById('photo');
+        imgEl.src = photo;
+        imgEl.classList.remove('hidden');
+        document.getElementById('userData').classList.remove('hidden');
+      } else {
+        document.getElementById('errorMessage').classList.remove('hidden');
+      }
+    });
+  </script>
 </body>
 </html>
 

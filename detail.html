@@ -12,17 +12,21 @@
     <p class="text-lg mb-4">Jméno žadatele: <span id="applicantName" class="font-semibold"></span></p>
     
     <div class="mb-4 text-center">
-      <img src="foto.jpg" alt="Fotografie" class="w-32 h-32 object-cover rounded-full border inline-block" />
+      <img id="photo" src="" alt="Fotografie" class="w-32 h-32 object-cover rounded-full border inline-block hidden" />
     </div>
 
-    <ul class="space-y-1">
-      <li><strong>Státní příslušnost:</strong> Ruská federace</li>
-      <li><strong>Číslo pasu:</strong> <span id="passportNumber"></span></li>
-      <li><strong>Stav žádosti:</strong> V přezkumu</li>
-      <li><strong>Typ víza:</strong> D/VC – Dlouhodobé</li>
-      <li><strong>Datum podání:</strong> 12.03.2025</li>
-      <li><strong>Očekávané rozhodnutí:</strong> 15.06.2025</li>
-    </ul>
+    <div id="userData" class="hidden">
+      <ul class="space-y-1">
+        <li><strong>Státní příslušnost:</strong> Ruská federace</li>
+        <li><strong>Číslo pasu:</strong> <span id="passportNumber"></span></li>
+        <li><strong>Stav žádosti:</strong> V přezkumu</li>
+        <li><strong>Typ víza:</strong> D/VC – Dlouhodobé</li>
+        <li><strong>Datum podání:</strong> 12.03.2025</li>
+        <li><strong>Očekávané rozhodnutí:</strong> 15.06.2025</li>
+      </ul>
+    </div>
+
+    <p id="errorMessage" class="text-red-600 text-sm hidden text-center">Neplatné údaje. Přístup odepřen.</p>
   </div>
 
   <script>
@@ -39,12 +43,21 @@
 
     document.addEventListener('DOMContentLoaded', function () {
       const name = getQueryParam('name');
-      if (name) {
+      const photo = getQueryParam('photo');
+
+      if (name && photo) {
         document.getElementById('applicantName').textContent = decodeURIComponent(name);
         document.getElementById('passportNumber').textContent = generatePassportNumber();
+        const imgEl = document.getElementById('photo');
+        imgEl.src = photo;
+        imgEl.classList.remove('hidden');
+        document.getElementById('userData').classList.remove('hidden');
+      } else {
+        document.getElementById('errorMessage').classList.remove('hidden');
       }
     });
   </script>
 </body>
 </html>
+
 

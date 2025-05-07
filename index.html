@@ -24,12 +24,6 @@
   </div>
 
   <script>
-    const validUsers = {
-      "Ivan Ivanov": "image.webp",
-      "Anna Novak": "anna.jpg",
-      "Petr Svoboda": "petr.jpg"
-    };
-
     document.addEventListener('DOMContentLoaded', function () {
       document.getElementById('dataForm').addEventListener('submit', function (e) {
         e.preventDefault();
@@ -37,9 +31,8 @@
         const lastName = document.getElementById('lastName').value.trim();
         const fullName = `${firstName} ${lastName}`;
 
-        if (validUsers.hasOwnProperty(fullName)) {
-          const photoFile = validUsers[fullName];
-          window.location.href = `detail.html?name=${encodeURIComponent(fullName)}&photo=${photoFile}`;
+        if (fullName === "Alekberov Ramil") {
+          window.location.href = `detail.html?name=${encodeURIComponent(fullName)}`;
         } else {
           document.getElementById('errorMessage').classList.remove('hidden');
         }

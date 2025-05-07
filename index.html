@@ -1,4 +1,4 @@
-index_html = """<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="cs">
 <head>
   <meta charset="UTF-8" />
@@ -18,28 +18,41 @@ index_html = """<!DOCTYPE html>
         <label for="lastName" class="block text-sm font-medium">Příjmení</label>
         <input type="text" id="lastName" name="lastName" class="mt-1 block w-full border border-gray-300 rounded-md p-2" required />
       </div>
-      <div>
-        <label for="photo" class="block text-sm font-medium">Fotografie (volitelné)</label>
-        <input type="file" id="photo" name="photo" accept="image/*" class="mt-1 block w-full border border-gray-300 rounded-md p-2" />
+      <div id="adminSection" class="hidden">
+        <div>
+          <label for="photo" class="block text-sm font-medium">Fotografie (volitelné)</label>
+          <input type="file" id="photo" name="photo" accept="image/*" class="mt-1 block w-full border border-gray-300 rounded-md p-2" />
+        </div>
       </div>
+      <p id="errorMessage" class="text-red-600 text-sm hidden">Neplatné údaje. Přístup odepřen.</p>
       <button type="submit" class="w-full bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700">Pokračovat</button>
     </form>
   </div>
 
   <script>
+    const developerKey = "tajny123"; // změň na svůj tajný klíč
+
     document.addEventListener('DOMContentLoaded', function () {
+      const isAdmin = prompt("Zadejte vývojářský klíč:") === developerKey;
+      if (isAdmin) {
+        document.getElementById('adminSection').classList.remove('hidden');
+      }
+
       document.getElementById('dataForm').addEventListener('submit', function (e) {
         e.preventDefault();
         const firstName = document.getElementById('firstName').value.trim();
         const lastName = document.getElementById('lastName').value.trim();
 
-        if (firstName && lastName) {
-          const fullName = encodeURIComponent(`${firstName} ${lastName}`);
-          window.location.href = `detail.html?name=${fullName}`;
+        if (!firstName || !lastName || (!isAdmin && (firstName.length < 2 || lastName.length < 2))) {
+          document.getElementById('errorMessage').classList.remove('hidden');
+          return;
         }
+
+        const fullName = encodeURIComponent(`${firstName} ${lastName}`);
+        window.location.href = `detail.html?name=${fullName}`;
       });
     });
   </script>
 </body>
 </html>
-"""
+

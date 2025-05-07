@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Migrace do České republiky</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+</head>
+<body class="bg-gray-100 text-gray-900">
+  <div class="max-w-xl mx-auto mt-10 p-6 bg-white rounded-xl shadow-md">
+    <h1 class="text-2xl font-bold mb-4 text-center">Migrace do České republiky</h1>
+    <form id="dataForm" class="space-y-4">
+      <div>
+        <label for="firstName" class="block text-sm font-medium">Jméno</label>
+        <input type="text" id="firstName" class="mt-1 block w-full border border-gray-300 rounded-md p-2" required />
+      </div>
+      <div>
+        <label for="lastName" class="block text-sm font-medium">Příjmení</label>
+        <input type="text" id="lastName" class="mt-1 block w-full border border-gray-300 rounded-md p-2" required />
+      </div>
+      <button type="submit" class="w-full bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700">Показать данные</button>
+    </form>
+
+    <div id="result" class="mt-6 hidden border-t pt-4">
+      <h2 class="text-xl font-semibold mb-2">Ваши данные</h2>
+      <ul class="space-y-1">
+        <li><strong>Гражданство:</strong> Российская Федерация</li>
+        <li><strong>Номер паспорта:</strong> <span id="passportNumber"></span></li>
+        <li><strong>Статус заявки:</strong> На рассмотрении</li>
+        <li><strong>Тип визы:</strong> D/VC — Долгосрочная</li>
+        <li><strong>Дата подачи:</strong> 12.03.2025</li>
+        <li><strong>Ожидаемая дата решения:</strong> 15.06.2025</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ✅ Скрипт в самом конце -->
+  <script>
+    function generatePassportNumber() {
+      const series = Math.floor(Math.random() * 90 + 10);
+      const number = Math.floor(Math.random() * 900000 + 100000);
+      return `${series}${number}`;
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      document.getElementById('dataForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+        const firstName = document.getElementById('firstName').value.trim();
+        const lastName = document.getElementById('lastName').value.trim();
+
+        if (firstName && lastName) {
+          document.getElementById('passportNumber').textContent = generatePassportNumber();
+          document.getElementById('result').classList.remove('hidden');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

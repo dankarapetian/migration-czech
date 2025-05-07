@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="ru">
+index_html = """<!DOCTYPE html>
+<html lang="cs">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -12,36 +12,21 @@
     <form id="dataForm" class="space-y-4">
       <div>
         <label for="firstName" class="block text-sm font-medium">Jméno</label>
-        <input type="text" id="firstName" class="mt-1 block w-full border border-gray-300 rounded-md p-2" required />
+        <input type="text" id="firstName" name="firstName" class="mt-1 block w-full border border-gray-300 rounded-md p-2" required />
       </div>
       <div>
         <label for="lastName" class="block text-sm font-medium">Příjmení</label>
-        <input type="text" id="lastName" class="mt-1 block w-full border border-gray-300 rounded-md p-2" required />
+        <input type="text" id="lastName" name="lastName" class="mt-1 block w-full border border-gray-300 rounded-md p-2" required />
       </div>
-      <button type="submit" class="w-full bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700">Показать данные</button>
+      <div>
+        <label for="photo" class="block text-sm font-medium">Fotografie (volitelné)</label>
+        <input type="file" id="photo" name="photo" accept="image/*" class="mt-1 block w-full border border-gray-300 rounded-md p-2" />
+      </div>
+      <button type="submit" class="w-full bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700">Pokračovat</button>
     </form>
-
-    <div id="result" class="mt-6 hidden border-t pt-4">
-      <h2 class="text-xl font-semibold mb-2">Ваши данные</h2>
-      <ul class="space-y-1">
-        <li><strong>Гражданство:</strong> Российская Федерация</li>
-        <li><strong>Номер паспорта:</strong> <span id="passportNumber"></span></li>
-        <li><strong>Статус заявки:</strong> На рассмотрении</li>
-        <li><strong>Тип визы:</strong> D/VC — Долгосрочная</li>
-        <li><strong>Дата подачи:</strong> 12.03.2025</li>
-        <li><strong>Ожидаемая дата решения:</strong> 15.06.2025</li>
-      </ul>
-    </div>
   </div>
 
-  <!-- ✅ Скрипт в самом конце -->
   <script>
-    function generatePassportNumber() {
-      const series = Math.floor(Math.random() * 90 + 10);
-      const number = Math.floor(Math.random() * 900000 + 100000);
-      return `${series}${number}`;
-    }
-
     document.addEventListener('DOMContentLoaded', function () {
       document.getElementById('dataForm').addEventListener('submit', function (e) {
         e.preventDefault();
@@ -49,11 +34,12 @@
         const lastName = document.getElementById('lastName').value.trim();
 
         if (firstName && lastName) {
-          document.getElementById('passportNumber').textContent = generatePassportNumber();
-          document.getElementById('result').classList.remove('hidden');
+          const fullName = encodeURIComponent(`${firstName} ${lastName}`);
+          window.location.href = `detail.html?name=${fullName}`;
         }
       });
     });
   </script>
 </body>
 </html>
+"""

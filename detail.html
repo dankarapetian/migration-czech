@@ -29,50 +29,50 @@
   </div>
 
   <script>
-    // Функция получения параметра из URL
-    function getParam(param) {
-      const urlParams = new URLSearchParams(window.location.search);
-      return urlParams.get(param);
-    }
-
-    // Получаем имя и фамилию из URL параметров
-    const first = getParam('first');
-    const last = getParam('last');
-
-    // Пример данных пользователей
+    // Данные пользователей
     const people = {
       "ramil_alekberov": {
         jmeno: "Ramil",
         prijmeni: "Alekberov",
         narozeni: "20.09.1998",
         misto: "Moskva / Rusko",
-        sex: "M",
+        sex: "Muž",
         obcanstvi: "Česká republika",
         vydani: "27.03.2025",
         platnost: "27.03.2035",
         doc: "283359730",
-        photo: "ramil.jpg"
+        photo: "ramil.jpg" // Путь к фото Рамиля
       },
       "natalia_garinova": {
         jmeno: "Natalia",
         prijmeni: "Garinova",
         narozeni: "15.09.1995",
         misto: "Jaroslavl / Rusko",
-        sex: "F",
+        sex: "Žena",
         obcanstvi: "Česká republika",
         vydani: "27.01.2025",
         platnost: "27.01.2035",
         doc: "260735219",
-        photo: "natalia.jpg"
+        photo: "natalia.jpg" // Путь к фото Наталии
       }
     };
 
-    // Формируем ключ по имени и фамилии
-    const key = `${first.toLowerCase()}_${last.toLowerCase()}`;
-    const data = people[key];
+    // Функция для извлечения параметра из URL
+    function getParam(param) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(param);
+    }
 
+    // Получаем параметры из URL (имя и фамилия)
+    const first = getParam('first');
+    const last = getParam('last');
+
+    // Создаем ключ для поиска данных в объекте people
+    const key = `${first.toLowerCase()}_${last.toLowerCase()}`;
+    const data = people[key]; // Получаем данные
+
+    // Если данные найдены, отображаем их
     if (data) {
-      // Заполняем данные на странице
       document.getElementById('jmeno').textContent = data.jmeno;
       document.getElementById('prijmeni').textContent = data.prijmeni;
       document.getElementById('narozeni').textContent = data.narozeni;
@@ -83,16 +83,15 @@
       document.getElementById('platnost').textContent = data.platnost;
       document.getElementById('doc').textContent = data.doc;
       document.getElementById('photo').src = data.photo;
-
-      // Показываем блок с данными
       document.getElementById('details').classList.remove('hidden');
     } else {
-      // Если данных нет, показываем ошибку
+      // Если данных нет, выводим сообщение об ошибке
       document.getElementById('error').classList.remove('hidden');
     }
   </script>
 </body>
 </html>
+
 
 
 

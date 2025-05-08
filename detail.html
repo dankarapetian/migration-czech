@@ -1,66 +1,61 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Detail žadatele</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body class="bg-gray-100 text-gray-900">
+<body class="bg-gray-100">
   <div class="max-w-xl mx-auto mt-10 p-6 bg-white rounded-xl shadow-md">
     <h1 class="text-2xl font-bold mb-4 text-center">Detail žadatele</h1>
-    <p class="text-lg mb-4">Jméno žadatele: <span id="applicantName" class="font-semibold"></span></p>
-
-    <div class="mb-4 text-center">
-      <img id="photo" src="" alt="Fotografie" class="w-32 h-32 object-cover rounded-full border inline-block hidden" />
-    </div>
-
-    <div id="userData" class="hidden">
-      <ul class="space-y-1 text-sm">
-        <li><strong>Datum narození:</strong> <span id="dob"></span></li>
-        <li><strong>Místo narození:</strong> <span id="birthplace"></span></li>
+    <div id="error" class="text-red-600 text-center hidden">Neplatné údaje.</div>
+    <div id="details" class="hidden">
+      <div class="text-center mb-4">
+        <img id="photo" class="w-32 h-32 object-cover rounded-full mx-auto" alt="Foto">
+      </div>
+      <ul class="space-y-1 text-lg">
+        <li><strong>Jméno:</strong> <span id="jmeno"></span></li>
+        <li><strong>Příjmení:</strong> <span id="prijmeni"></span></li>
+        <li><strong>Datum narození:</strong> <span id="narozeni"></span></li>
+        <li><strong>Místo narození:</strong> <span id="misto"></span></li>
         <li><strong>Pohlaví:</strong> <span id="sex"></span></li>
-        <li><strong>Státní občanství:</strong> <span id="nationality"></span></li>
-        <li><strong>Datum vydání:</strong> <span id="issued"></span></li>
-        <li><strong>Platnost do:</strong> <span id="expires"></span></li>
-        <li><strong>Číslo dokladu:</strong> <span id="doc"></span></li>
+        <li><strong>Státní příslušnost:</strong> <span id="obcanstvi"></span></li>
+        <li><strong>Datum vydání:</strong> <span id="vydani"></span></li>
+        <li><strong>Platnost do:</strong> <span id="platnost"></span></li>
+        <li><strong>Číslo dokumentu:</strong> <span id="doc"></span></li>
       </ul>
     </div>
-
-    <p id="errorMessage" class="text-red-600 text-sm hidden text-center">Neplatné údaje. Přístup odepřen.</p>
   </div>
 
   <script src="people.js"></script>
   <script>
-    function getQueryParam(param) {
-      const params = new URLSearchParams(window.location.search);
-      return params.get(param);
+    function getParam(param) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(param);
     }
 
-    document.addEventListener("DOMContentLoaded", () => {
-      const first = getQueryParam('first');
-      const last = getQueryParam('last');
-      const fullKey = `${first} ${last}`.toLowerCase();
+    const first = getParam('first');
+    const last = getParam('last');
 
-      const data = people[fullKey];
+    const key = `${first.toLowerCase()}_${last.toLowerCase()}`;
+    const data = people[key];
 
-      if (data) {
-        document.getElementById('applicantName').textContent = `${first} ${last}`;
-        document.getElementById('dob').textContent = data.dob;
-        document.getElementById('birthplace').textContent = data.birthplace;
-        document.getElementById('sex').textContent = data.sex;
-        document.getElementById('nationality').textContent = data.nationality;
-        document.getElementById('issued').textContent = data.issued;
-        document.getElementById('expires').textContent = data.expires;
-        document.getElementById('doc').textContent = data.doc;
-        const img = document.getElementById('photo');
-        img.src = data.photo;
-        img.classList.remove('hidden');
-        document.getElementById('userData').classList.remove('hidden');
-      } else {
-        document.getElementById('errorMessage').classList.remove('hidden');
-      }
-    });
+    if (data) {
+      document.getElementById('jmeno').textContent = data.jmeno;
+      document.getElementById('prijmeni').textContent = data.prijmeni;
+      document.getElementById('narozeni').textContent = data.narozeni;
+      document.getElementById('misto').textContent = data.misto;
+      document.getElementById('sex').textContent = data.sex;
+      document.getElementById('obcanstvi').textContent = data.obcanstvi;
+      document.getElementById('vydani').textContent = data.vydani;
+      document.getElementById('platnost').textContent = data.platnost;
+      document.getElementById('doc').textContent = data.doc;
+      document.getElementById('photo').src = data.photo;
+      document.getElementById('details').classList.remove('hidden');
+    } else {
+      document.getElementById('error').classList.remove('hidden');
+    }
   </script>
 </body>
 </html>

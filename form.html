@@ -11,12 +11,12 @@
     <h1 class="text-2xl font-bold mb-6 text-center">Zkontrolujte údaje žadatele</h1>
     <form id="verifyForm">
       <div class="mb-4">
-        <label for="first" class="block font-semibold">Jméno</label>
-        <input type="text" id="first" name="first" class="w-full mt-1 border rounded px-3 py-2" required>
+        <label class="block font-semibold">Jméno</label>
+        <input type="text" id="first" class="w-full border rounded px-3 py-2" required>
       </div>
       <div class="mb-6">
-        <label for="last" class="block font-semibold">Příjmení</label>
-        <input type="text" id="last" name="last" class="w-full mt-1 border rounded px-3 py-2" required>
+        <label class="block font-semibold">Příjmení</label>
+        <input type="text" id="last" class="w-full border rounded px-3 py-2" required>
       </div>
       <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">
         Ověřit
@@ -29,9 +29,7 @@
       e.preventDefault();
       const first = document.getElementById('first').value.trim();
       const last = document.getElementById('last').value.trim();
-      if (first && last) {
-        window.location.href = `detail.html?first=${encodeURIComponent(first)}&last=${encodeURIComponent(last)}`;
-      }
+      window.location.href = `detail.html?first=${encodeURIComponent(first)}&last=${encodeURIComponent(last)}`;
     });
   </script>
 </body>

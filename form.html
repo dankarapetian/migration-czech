@@ -1,36 +1,19 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Ověření údajů</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vyhledávání Žadatele</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body class="bg-gray-100 flex items-center justify-center h-screen">
-  <div class="bg-white p-8 rounded shadow-md w-full max-w-md">
-    <h1 class="text-2xl font-bold mb-6 text-center">Zkontrolujte údaje žadatele</h1>
-    <form id="verifyForm">
-      <div class="mb-4">
-        <label class="block font-semibold">Jméno</label>
-        <input type="text" id="first" class="w-full border rounded px-3 py-2" required>
-      </div>
-      <div class="mb-6">
-        <label class="block font-semibold">Příjmení</label>
-        <input type="text" id="last" class="w-full border rounded px-3 py-2" required>
-      </div>
-      <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">
-        Ověřit
-      </button>
+<body class="bg-gray-100 text-gray-900">
+  <div class="max-w-xl mx-auto mt-10 p-6 bg-white rounded-xl shadow-md">
+    <h1 class="text-2xl font-bold mb-4 text-center">Vyhledávání žadatele</h1>
+    <form action="detail.html" method="GET">
+      <input name="first" placeholder="Jméno" class="border border-gray-300 p-2 w-full mb-4 rounded">
+      <input name="last" placeholder="Příjmení" class="border border-gray-300 p-2 w-full mb-4 rounded">
+      <button type="submit" class="bg-blue-500 text-white p-2 w-full rounded">Zobrazit</button>
     </form>
   </div>
-
-  <script>
-    document.getElementById('verifyForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const first = document.getElementById('first').value.trim();
-      const last = document.getElementById('last').value.trim();
-      window.location.href = `detail.html?first=${encodeURIComponent(first)}&last=${encodeURIComponent(last)}`;
-    });
-  </script>
 </body>
 </html>

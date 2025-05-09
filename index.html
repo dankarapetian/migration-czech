@@ -5,6 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Integrační portál pro cizince</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <style>
+    .card {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .card img {
+      width: 100%;
+      height: auto;
+    }
+    .card-body {
+      padding: 1rem;
+    }
+  </style>
 </head>
 <body class="bg-gray-100 text-gray-900">
   <!-- Header -->
@@ -28,35 +43,36 @@
       <h2 class="text-2xl font-semibold mb-4">Aktuality</h2>
       <ul class="space-y-3">
         <li>
-          <a href="https://ipc.gov.cz/aktuality/spusteni-online-procesu-vyjadreni-zajmu-o-zvlastni-dlouhodoby-pobyt/" class="text-blue-600 hover:underline">
-            Spuštění online procesu vyjádření zájmu o zvláštní dlouhodobý pobyt (1. 4. 2025)
-          </a>
+          <div class="card">
+            <img src="https://via.placeholder.com/600x400?text=Aktualita+1" alt="Aktualita 1">
+            <div class="card-body">
+              <a href="https://ipc.gov.cz/aktuality/spusteni-online-procesu-vyjadreni-zajmu-o-zvlastni-dlouhodoby-pobyt/" class="text-blue-600 hover:underline font-semibold">
+                Spuštění online procesu vyjádření zájmu o zvláštní dlouhodobý pobyt (1. 4. 2025)
+              </a>
+            </div>
+          </div>
         </li>
         <li>
-          <a href="https://ipc.gov.cz/aktuality/vyjadreni-zajmu-a-proces-ziskani-zvlastniho-dlouhodobeho-pobytu/" class="text-blue-600 hover:underline">
-            Vyjádření zájmu a proces získání zvláštního dlouhodobého pobytu (10. 3. 2025)
-          </a>
+          <div class="card">
+            <img src="https://via.placeholder.com/600x400?text=Aktualita+2" alt="Aktualita 2">
+            <div class="card-body">
+              <a href="https://ipc.gov.cz/aktuality/vyjadreni-zajmu-a-proces-ziskani-zvlastniho-dlouhodobeho-pobytu/" class="text-blue-600 hover:underline font-semibold">
+                Vyjádření zájmu a proces získání zvláštního dlouhodobého pobytu (10. 3. 2025)
+              </a>
+            </div>
+          </div>
         </li>
         <li>
-          <a href="https://ipc.gov.cz/aktuality/volny-pristup-na-trh-prace-pro-obcany-vybranych-zemi-se-rozsiruje-o-obcany-tchaj-wanu/" class="text-blue-600 hover:underline">
-            Volný přístup na trh práce pro občany Tchaj-wanu (3. 3. 2025)
-          </a>
+          <div class="card">
+            <img src="https://via.placeholder.com/600x400?text=Aktualita+3" alt="Aktualita 3">
+            <div class="card-body">
+              <a href="https://ipc.gov.cz/aktuality/volny-pristup-na-trh-prace-pro-obcany-vybranych-zemi-se-rozsiruje-o-obcany-tchaj-wanu/" class="text-blue-600 hover:underline font-semibold">
+                Volný přístup na trh práce pro občany Tchaj-wanu (3. 3. 2025)
+              </a>
+            </div>
+          </div>
         </li>
-        <li>
-          <a href="https://ipc.gov.cz/aktuality/prodlouzeni-viz-strpeni-vydanych-v-souvislosti-s-ozbrojenym-konfliktem-na-ukrajine/" class="text-blue-600 hover:underline">
-            Prodloužení víz strpění vydaných v souvislosti s ozbrojeným konfliktem na Ukrajině (21. 2. 2025)
-          </a>
-        </li>
-        <li>
-          <a href="https://ipc.gov.cz/aktuality/online-registrace-k-prodlouzeni-docasne-ochrany/" class="text-blue-600 hover:underline">
-            Online registrace k prodloužení dočasné ochrany (10. 2. 2025)
-          </a>
-        </li>
-        <li>
-          <a href="https://ipc.gov.cz/aktuality/stehovani-krajského-asistencniho-centra-pomoci-ukrajine-z-havirova-do-ostravy/" class="text-blue-600 hover:underline">
-            Stěhování Krajského asistenčního centra pomoci Ukrajině z Havířova do Ostravy (3. 2. 2025)
-          </a>
-        </li>
+        <!-- Добавьте другие новости, как нужно -->
       </ul>
     </section>
 
@@ -66,7 +82,7 @@
       <p class="mb-4">
         Česká republika aktivně upravuje svou migrační politiku s cílem integrace cizinců a zajištění bezpečnosti. Nové legislativní změny a programy jsou pravidelně aktualizovány na oficiálním portálu.
       </p>
-      <a href="https://ipc.gov.cz/typy-viz-a-pobytu/" class="text-blue-600 hover:underline">Více informací o typech víz a pobytů</a>
+      <a href="https://ipc.gov.cz/typy-viz-a-pobytu/" class="text-blue-600 hover:underline font-semibold">Více informací o typech víz a pobytů</a>
     </section>
 
     <!-- Dočasná ochrana -->
@@ -75,7 +91,7 @@
       <p class="mb-4">
         Informace pro ukrajinské občany prchající před válkou, včetně podmínek pro získání a prodloužení dočasné ochrany.
       </p>
-      <a href="https://ipc.gov.cz/docasna-ochrana/" class="text-blue-600 hover:underline">Podrobnosti o dočasné ochraně</a>
+      <a href="https://ipc.gov.cz/docasna-ochrana/" class="text-blue-600 hover:underline font-semibold">Podrobnosti o dočasné ochraně</a>
     </section>
 
     <!-- Kontakty -->
@@ -118,3 +134,4 @@
   </footer>
 </body>
 </html>
+

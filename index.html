@@ -11,6 +11,7 @@
       border-radius: 8px;
       overflow: hidden;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      background-color: #ffffff;
     }
     .card img {
       width: 100%;
@@ -19,9 +20,23 @@
     .card-body {
       padding: 1rem;
     }
+    .card a {
+      color: #2563eb;
+      font-weight: bold;
+    }
+    .card a:hover {
+      text-decoration: underline;
+    }
+    .section-header {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      color: #1f2937;
+    }
   </style>
 </head>
 <body class="bg-gray-100 text-gray-900">
+
   <!-- Header -->
   <header class="bg-white shadow p-4 flex justify-between items-center">
     <div class="text-xl font-bold">Integrační portál</div>
@@ -40,7 +55,7 @@
   <main class="max-w-6xl mx-auto p-6">
     <!-- Aktuality -->
     <section class="mb-8">
-      <h2 class="text-2xl font-semibold mb-4">Aktuality</h2>
+      <h2 class="section-header">Aktuality</h2>
       <ul class="space-y-3">
         <li>
           <div class="card">
@@ -72,13 +87,22 @@
             </div>
           </div>
         </li>
-        <!-- Добавьте другие новости, как нужно -->
+        <li>
+          <div class="card">
+            <img src="https://via.placeholder.com/600x400?text=Aktualita+4" alt="Aktualita 4">
+            <div class="card-body">
+              <a href="https://ipc.gov.cz/aktuality/zmena-pravidel-pro-ziskani-zvlastniho-dlouhodobeho-pobytu/" class="text-blue-600 hover:underline font-semibold">
+                Změna pravidel pro získání zvláštního dlouhodobého pobytu (25. 2. 2025)
+              </a>
+            </div>
+          </div>
+        </li>
       </ul>
     </section>
 
     <!-- Migration Policy -->
     <section class="mb-8">
-      <h2 class="text-2xl font-semibold mb-4">Migrační politika</h2>
+      <h2 class="section-header">Migrační politika</h2>
       <p class="mb-4">
         Česká republika aktivně upravuje svou migrační politiku s cílem integrace cizinců a zajištění bezpečnosti. Nové legislativní změny a programy jsou pravidelně aktualizovány na oficiálním portálu.
       </p>
@@ -87,7 +111,7 @@
 
     <!-- Dočasná ochrana -->
     <section class="mb-8">
-      <h2 class="text-2xl font-semibold mb-4">Dočasná ochrana</h2>
+      <h2 class="section-header">Dočasná ochrana</h2>
       <p class="mb-4">
         Informace pro ukrajinské občany prchající před válkou, včetně podmínek pro získání a prodloužení dočasné ochrany.
       </p>
@@ -96,7 +120,7 @@
 
     <!-- Kontakty -->
     <section class="mb-8">
-      <h2 class="text-2xl font-semibold mb-4">Kontakty</h2>
+      <h2 class="section-header">Kontakty</h2>
       <p class="mb-2">
         <strong>Ministerstvo vnitra:</strong><br>
         Nad Štolou 3, 170 34 Praha 7<br>
@@ -117,7 +141,7 @@
 
     <!-- Additional Resources -->
     <section class="mb-8">
-      <h2 class="text-2xl font-semibold mb-4">Další informace</h2>
+      <h2 class="section-header">Další informace</h2>
       <ul class="list-disc list-inside space-y-2">
         <li><a href="https://ipc.gov.cz/poradna/" class="text-blue-600 hover:underline">Potřebujete poradit?</a></li>
         <li><a href="https://ipc.gov.cz/faq/" class="text-blue-600 hover:underline">Často kladené otázky (FAQ)</a></li>
@@ -132,6 +156,7 @@
   <footer class="bg-white shadow p-4 text-center">
     ©2025 Ministerstvo vnitra České republiky. Všechna práva vyhrazena.
   </footer>
+
 </body>
 </html>
 
